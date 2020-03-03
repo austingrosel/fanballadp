@@ -23,24 +23,24 @@ slopes <- df %>%
   filter(term == "year")
 
 first_draft = df %>% 
-  filter(ScrapeDate >= '2020-02-08', ScrapeDate <= '2020-02-12') %>%
+  filter(ScrapeDate >= min(ScrapeDate), ScrapeDate <= '2020-02-12') %>%
   mutate(adp.agg = ADP * `# Picks`) %>%
   group_by(Player) %>%
   summarise(adp.agg = sum(adp.agg),
             picks = sum(`# Picks`)
             ) %>%
-  mutate(ADP = adp.agg/picks) %>%
+  mutate(ADP = round(adp.agg/picks, 1)) %>%
   arrange(ADP) %>%
   mutate(Rk = 1:n())
 
 recent_draft = df %>% 
-  filter(ScrapeDate >= '2020-02-27', ScrapeDate <= '2020-03-02') %>%
+  filter(ScrapeDate >= max(ScrapeDate) - days(8), ScrapeDate <= max(ScrapeDate)) %>%
   mutate(adp.agg = ADP * `# Picks`) %>%
   group_by(Player) %>%
   summarise(adp.agg = sum(adp.agg),
             picks = sum(`# Picks`)
   ) %>%
-  mutate(ADP = adp.agg/picks) %>%
+  mutate(ADP = round(adp.agg/picks, 1)) %>%
   arrange(ADP) %>%
   mutate(Rk = 1:n())
 
