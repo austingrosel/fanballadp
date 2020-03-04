@@ -14,7 +14,11 @@ csv_files <- fs::dir_ls(data_dir, regexp = "\\.csv$")
 df = csv_files %>% 
   map_dfr(read_csv) %>%
   select(Player, ScrapeDate, ADP, `# Picks`, `Position(s)`, Rk) %>% 
+  rename(Picks=`# Picks`, Position=`Position(s)`) %>%
   mutate(year = year(ScrapeDate) + yday(ScrapeDate) / 365)
+
+daily_drafts = df %>% group_by(ScrapeDate) %>% summarise(picks = max(Picks))
+plot(daily_drafts$ScrapeDate, daily_drafts$picks, type = 'l')
 
 slopes <- df %>%
   nest(-Player) %>%
@@ -24,21 +28,21 @@ slopes <- df %>%
 
 first_draft = df %>% 
   filter(ScrapeDate >= min(ScrapeDate), ScrapeDate <= '2020-02-12') %>%
-  mutate(adp.agg = ADP * `# Picks`) %>%
+  mutate(adp.agg = ADP * Picks) %>%
   group_by(Player) %>%
   summarise(adp.agg = sum(adp.agg),
-            picks = sum(`# Picks`)
+            picks = sum(Picks)
             ) %>%
   mutate(ADP = round(adp.agg/picks, 1)) %>%
   arrange(ADP) %>%
   mutate(Rk = 1:n())
 
 recent_draft = df %>% 
-  filter(ScrapeDate >= max(ScrapeDate) - days(8), ScrapeDate <= max(ScrapeDate)) %>%
-  mutate(adp.agg = ADP * `# Picks`) %>%
-  group_by(Player) %>%
+  filter(ScrapeDate >= max(ScrapeDate) - days(7), ScrapeDate <= max(ScrapeDate)) %>%
+  mutate(adp.agg = ADP * Picks) %>%
+  group_by(Player, Position) %>%
   summarise(adp.agg = sum(adp.agg),
-            picks = sum(`# Picks`)
+            picks = sum(Picks)
   ) %>%
   mutate(ADP = round(adp.agg/picks, 1)) %>%
   arrange(ADP) %>%
@@ -54,11 +58,12 @@ recent_draft_players = recent_draft %>% pull(Player)
 slopes %>%
   arrange(desc(estimate)) %>%
   filter(Player %in% recent_draft_players) %>%
-  head(20) %>%
+  tail(20) %>%
   inner_join(df, by = "Player") %>%
   mutate(Player = reorder(Player, -estimate)) %>%
   ggplot(aes(year, Rk, color = Player)) +
-  geom_point(aes(size = `# Picks`), show.legend = FALSE) +
+  geom_point(aes(size = Picks), show.legend = FALSE) +
+  geom_smooth(show.legend = F) +
   #geom_line(show.legend = FALSE) +
   facet_wrap(~ Player, scales = "free_y") +
   expand_limits(y = 0) +

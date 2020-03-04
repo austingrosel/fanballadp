@@ -11,8 +11,8 @@ Rk,Player,Team,Position(s),ADP,Min,Max,# Picks,ScrapeDate
 10,Derrick Henry,TEN,RB,9.25,5,12,8,2020-02-16
 11,DeAndre Hopkins,HOU,WR,12.0,8,14,8,2020-02-16
 12,Josh Jacobs,OAK,RB,12.25,11,14,8,2020-02-16
-13,Leonard Fournette,JAX,RB,13.63,11,18,8,2020-02-16
-14,Davante Adams,GB,WR,13.63,10,20,8,2020-02-16
+13,Davante Adams,GB,WR,13.63,10,20,8,2020-02-16
+14,Leonard Fournette,JAX,RB,13.63,11,18,8,2020-02-16
 15,Tyreek Hill,KC,WR,15.0,12,18,8,2020-02-16
 16,Travis Kelce,KC,TE,16.75,15,19,8,2020-02-16
 17,Miles Sanders,PHI,RB,17.63,14,22,8,2020-02-16
@@ -98,8 +98,8 @@ Rk,Player,Team,Position(s),ADP,Min,Max,# Picks,ScrapeDate
 97,Noah Fant,DEN,TE,96.5,77,111,8,2020-02-16
 98,Robby Anderson,NYJ,WR,97.13,91,106,8,2020-02-16
 99,Marvin Jones,DET,WR,98.13,88,110,8,2020-02-16
-100,Dallas Goedert,PHI,TE,103.63,79,114,8,2020-02-16
-101,Will Fuller,HOU,WR,103.63,94,113,8,2020-02-16
+100,Will Fuller,HOU,WR,103.63,94,113,8,2020-02-16
+101,Dallas Goedert,PHI,TE,103.63,79,114,8,2020-02-16
 102,Diontae Johnson,PIT,WR,104.13,96,112,8,2020-02-16
 103,Josh Allen,BUF,QB,104.38,93,113,8,2020-02-16
 104,CeeDee Lamb,FA,WR,105.0,96,117,8,2020-02-16
