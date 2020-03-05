@@ -1,5 +1,5 @@
 # docker run -d -p 4444:4444 --shm-size=8g selenium/standalone-chrome
-# python adp.py RunAll --local-scheduler --date-interval 2020-02-08-2020-03-03
+# python adp.py RunAll --local-scheduler --date-interval 2020-02-08-2020-03-04
 
 import time
 import datetime
@@ -43,6 +43,8 @@ class Streams(luigi.Task):
         time.sleep(5)
 
         tbl = driver.find_element_by_xpath("//*[@id=\"adp\"]").get_attribute('outerHTML')
+
+        driver.save_screenshot('screenshot.png')
 
         try:
             df = pd.read_html(tbl)[0]

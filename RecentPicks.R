@@ -27,7 +27,7 @@ slopes <- df %>%
   filter(term == "year")
 
 first_draft = df %>% 
-  filter(ScrapeDate >= min(ScrapeDate), ScrapeDate <= '2020-02-12') %>%
+  filter(ScrapeDate >= min(ScrapeDate), ScrapeDate <= min(ScrapeDate) + days(7)) %>%
   mutate(adp.agg = ADP * Picks) %>%
   group_by(Player) %>%
   summarise(adp.agg = sum(adp.agg),
@@ -42,29 +42,33 @@ recent_draft = df %>%
   mutate(adp.agg = ADP * Picks) %>%
   group_by(Player, Position) %>%
   summarise(adp.agg = sum(adp.agg),
-            picks = sum(Picks)
-  ) %>%
+            picks = sum(Picks)) %>%
   mutate(ADP = round(adp.agg/picks, 1)) %>%
   arrange(ADP) %>%
+  ungroup() %>%
   mutate(Rk = 1:n())
 
 draft_trend = recent_draft %>%
   left_join(., first_draft %>% select(Player, Rk) %>% rename(start_rank=Rk), by = c("Player")) %>%
+  select(-adp.agg) %>%
   mutate(Rk = ifelse(is.na(Rk), 300, Rk),
+         start_rank = ifelse(is.na(start_rank), 300, start_rank),
          diff = Rk - start_rank) %>%
-  filter(Rk <= 250)
+  filter(Rk <= 250) %>%
+  group_by(Position) %>%
+  mutate(rank = order(Rk, decreasing=F),
+         pos_rank = paste(Position, rank, sep = ''))
 
 recent_draft_players = recent_draft %>% pull(Player)
 slopes %>%
   arrange(desc(estimate)) %>%
   filter(Player %in% recent_draft_players) %>%
-  tail(20) %>%
+  head(20) %>%
   inner_join(df, by = "Player") %>%
   mutate(Player = reorder(Player, -estimate)) %>%
   ggplot(aes(year, Rk, color = Player)) +
   geom_point(aes(size = Picks), show.legend = FALSE) +
   geom_smooth(show.legend = F) +
-  #geom_line(show.legend = FALSE) +
   facet_wrap(~ Player, scales = "free_y") +
   expand_limits(y = 0) +
   scale_y_reverse() +
