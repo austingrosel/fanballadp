@@ -1,8 +1,8 @@
 Rk,Player,Team,Position(s),ADP,Min,Max,# Picks,ScrapeDate
 1,Christian McCaffrey,CAR,RB,1.0,1,1,2,2020-03-02
 2,Saquon Barkley,NYG,RB,2.0,2,2,2,2020-03-02
-3,Dalvin Cook,MIN,RB,3.5,3,4,2,2020-03-02
-4,Ezekiel Elliott,DAL,RB,3.5,3,4,2,2020-03-02
+3,Ezekiel Elliott,DAL,RB,3.5,3,4,2,2020-03-02
+4,Dalvin Cook,MIN,RB,3.5,3,4,2,2020-03-02
 5,Michael Thomas,NO,WR,5.5,5,6,2,2020-03-02
 6,Alvin Kamara,NO,RB,7.0,6,8,2,2020-03-02
 7,Joe Mixon,CIN,RB,8.0,7,9,2,2020-03-02
@@ -27,8 +27,8 @@ Rk,Player,Team,Position(s),ADP,Min,Max,# Picks,ScrapeDate
 26,D.J. Moore,CAR,WR,27.5,23,32,2,2020-03-02
 27,Odell Beckham,CLE,WR,27.5,27,28,2,2020-03-02
 28,Jonathan Taylor,FA,RB,28.0,24,32,2,2020-03-02
-29,Chris Carson,SEA,RB,29.0,28,30,2,2020-03-02
-30,Devin Singletary,BUF,RB,29.0,29,29,2,2020-03-02
+29,Devin Singletary,BUF,RB,29.0,29,29,2,2020-03-02
+30,Chris Carson,SEA,RB,29.0,28,30,2,2020-03-02
 31,A.J. Brown,TEN,WR,30.0,27,33,2,2020-03-02
 32,Kenny Golladay,DET,WR,31.0,31,31,2,2020-03-02
 33,Courtland Sutton,DEN,WR,32.0,26,38,2,2020-03-02
@@ -47,8 +47,8 @@ Rk,Player,Team,Position(s),ADP,Min,Max,# Picks,ScrapeDate
 46,Mark Andrews,BAL,TE,47.0,45,49,2,2020-03-02
 47,D.K. Metcalf,SEA,WR,48.0,39,57,2,2020-03-02
 48,Damien Williams,KC,RB,49.5,49,50,2,2020-03-02
-49,Zach Ertz,PHI,TE,51.0,48,54,2,2020-03-02
-50,Darren Waller,OAK,TE,51.0,46,56,2,2020-03-02
+49,Darren Waller,OAK,TE,51.0,46,56,2,2020-03-02
+50,Zach Ertz,PHI,TE,51.0,48,54,2,2020-03-02
 51,Stefon Diggs,MIN,WR,51.0,48,54,2,2020-03-02
 52,Calvin Ridley,ATL,WR,53.0,50,56,2,2020-03-02
 53,Kerryon Johnson,DET,RB,53.5,52,55,2,2020-03-02
@@ -81,11 +81,11 @@ Rk,Player,Team,Position(s),ADP,Min,Max,# Picks,ScrapeDate
 80,Marquise Brown,BAL,WR,79.0,67,91,2,2020-03-02
 81,Hunter Henry,LAC,TE,83.0,81,85,2,2020-03-02
 82,James White,NE,RB,84.5,82,87,2,2020-03-02
-83,Dak Prescott,DAL,QB,84.5,83,86,2,2020-03-02
-84,Kyler Murray,ARZ,QB,84.5,80,89,2,2020-03-02
+83,Kyler Murray,ARZ,QB,84.5,80,89,2,2020-03-02
+84,Dak Prescott,DAL,QB,84.5,83,86,2,2020-03-02
 85,Clyde Edwards-Helaire,FA,RB,86.5,78,95,2,2020-03-02
-86,Mecole Hardman,KC,WR,86.5,86,87,2,2020-03-02
-87,Tyler Higbee,LA,TE,86.5,81,92,2,2020-03-02
+86,Tyler Higbee,LA,TE,86.5,81,92,2,2020-03-02
+87,Mecole Hardman,KC,WR,86.5,86,87,2,2020-03-02
 88,Jared Cook,NO,TE,87.0,83,91,2,2020-03-02
 89,Ronald Jones,TB,RB,87.0,85,89,2,2020-03-02
 90,Jamison Crowder,NYJ,WR,87.5,76,99,2,2020-03-02
@@ -95,16 +95,16 @@ Rk,Player,Team,Position(s),ADP,Min,Max,# Picks,ScrapeDate
 94,Darius Slayton,NYG,WR,95.5,90,101,2,2020-03-02
 95,Matt Ryan,ATL,QB,96.5,84,109,2,2020-03-02
 96,Josh Allen,BUF,QB,98.0,94,102,2,2020-03-02
-97,Marvin Jones,DET,WR,98.5,93,104,2,2020-03-02
-98,Noah Fant,DEN,TE,98.5,94,103,2,2020-03-02
+97,Noah Fant,DEN,TE,98.5,94,103,2,2020-03-02
+98,Marvin Jones,DET,WR,98.5,93,104,2,2020-03-02
 99,Brandin Cooks,LA,WR,99.0,96,102,2,2020-03-02
-100,Sony Michel,NE,RB,99.5,92,107,2,2020-03-02
-101,Dallas Goedert,PHI,TE,99.5,99,100,2,2020-03-02
-102,Robby Anderson,NYJ,WR,100.5,96,105,2,2020-03-02
-103,Mike Williams,LAC,WR,100.5,93,108,2,2020-03-02
-104,Carson Wentz,PHI,QB,100.5,97,104,2,2020-03-02
-105,Tarik Cohen,CHI,RB,105.5,100,111,2,2020-03-02
-106,Mike Gesicki,MIA,TE,105.5,98,113,2,2020-03-02
+100,Dallas Goedert,PHI,TE,99.5,99,100,2,2020-03-02
+101,Sony Michel,NE,RB,99.5,92,107,2,2020-03-02
+102,Mike Williams,LAC,WR,100.5,93,108,2,2020-03-02
+103,Carson Wentz,PHI,QB,100.5,97,104,2,2020-03-02
+104,Robby Anderson,NYJ,WR,100.5,96,105,2,2020-03-02
+105,Mike Gesicki,MIA,TE,105.5,98,113,2,2020-03-02
+106,Tarik Cohen,CHI,RB,105.5,100,111,2,2020-03-02
 107,Diontae Johnson,PIT,WR,106.5,95,118,2,2020-03-02
 108,CeeDee Lamb,FA,WR,108.0,105,111,2,2020-03-02
 109,Aaron Rodgers,GB,QB,109.0,106,112,2,2020-03-02
@@ -122,9 +122,9 @@ Rk,Player,Team,Position(s),ADP,Min,Max,# Picks,ScrapeDate
 121,Anthony Miller,CHI,WR,124.5,115,134,2,2020-03-02
 122,Matthew Stafford,DET,QB,124.5,124,125,2,2020-03-02
 123,Ben Roethlisberger,PIT,QB,125.0,115,135,2,2020-03-02
-124,Ryan Tannehill,TEN,QB,127.0,123,131,2,2020-03-02
-125,Jared Goff,LA,QB,127.0,127,127,2,2020-03-02
-126,Preston Williams,MIA,WR,127.0,123,131,2,2020-03-02
+124,Preston Williams,MIA,WR,127.0,123,131,2,2020-03-02
+125,Ryan Tannehill,TEN,QB,127.0,123,131,2,2020-03-02
+126,Jared Goff,LA,QB,127.0,127,127,2,2020-03-02
 127,Jonnu Smith,TEN,TE,127.5,126,129,2,2020-03-02
 128,Ian Thomas,CAR,TE,129.0,125,133,2,2020-03-02
 129,Baker Mayfield,CLE,QB,130.0,128,132,2,2020-03-02
@@ -194,8 +194,8 @@ Rk,Player,Team,Position(s),ADP,Min,Max,# Picks,ScrapeDate
 193,Darwin Thompson,KC,RB,195.5,179,212,2,2020-03-02
 194,Kyle Rudolph,MIN,TE,196.0,186,206,2,2020-03-02
 195,Justin Jackson,LAC,RB,196.0,188,204,2,2020-03-02
-196,Kansas City Chiefs,KC,TDSP,197.0,194,200,2,2020-03-02
-197,Darren Fells,HOU,TE,197.0,196,198,2,2020-03-02
+196,Darren Fells,HOU,TE,197.0,196,198,2,2020-03-02
+197,Kansas City Chiefs,KC,TDSP,197.0,194,200,2,2020-03-02
 198,Parris Campbell,IND,WR,198.5,192,205,2,2020-03-02
 199,Gus Edwards,BAL,RB,203.5,184,223,2,2020-03-02
 200,Tennessee Titans,TEN,TDSP,205.0,200,210,2,2020-03-02
@@ -203,12 +203,12 @@ Rk,Player,Team,Position(s),ADP,Min,Max,# Picks,ScrapeDate
 202,Anthony McFarland,FA,RB,206.5,191,222,2,2020-03-02
 203,Matt Breida,SF,RB,209.0,207,211,2,2020-03-02
 204,Gerald Everett,LA,TE,209.5,199,220,2,2020-03-02
-205,Los Angeles (LAC) Chargers,LAC,TDSP,210.0,207,213,2,2020-03-02
-206,Jaylen Samuels,PIT,RB,210.0,197,223,2,2020-03-02
+205,Jaylen Samuels,PIT,RB,210.0,197,223,2,2020-03-02
+206,Los Angeles (LAC) Chargers,LAC,TDSP,210.0,207,213,2,2020-03-02
 207,Philadelphia Eagles,PHI,TDSP,211.5,205,218,2,2020-03-02
-208,Chris Conley,JAX,WR,212.0,195,229,2,2020-03-02
-209,Tampa Bay Buccaneers,TB,TDSP,212.0,208,216,2,2020-03-02
-210,Jace Sternberger,GB,TE,212.0,203,221,2,2020-03-02
+208,Tampa Bay Buccaneers,TB,TDSP,212.0,208,216,2,2020-03-02
+209,Jace Sternberger,GB,TE,212.0,203,221,2,2020-03-02
+210,Chris Conley,JAX,WR,212.0,195,229,2,2020-03-02
 211,Green Bay Packers,GB,TDSP,213.0,211,215,2,2020-03-02
 212,New York (NYJ) Jets,NYJ,TDSP,214.0,214,214,2,2020-03-02
 213,Vance McDonald,PIT,TE,216.5,196,237,2,2020-03-02
@@ -222,8 +222,8 @@ Rk,Player,Team,Position(s),ADP,Min,Max,# Picks,ScrapeDate
 221,Andy Isabella,ARZ,WR,227.5,224,231,2,2020-03-02
 222,Washington Redskins,WAS,TDSP,229.5,225,234,2,2020-03-02
 223,Nyheim Hines,IND,RB,229.5,178,178,1,2020-03-02
-224,Houston Texans,HOU,TDSP,230.5,226,235,2,2020-03-02
-225,Mitchell Trubisky,CHI,QB,230.5,180,180,1,2020-03-02
+224,Mitchell Trubisky,CHI,QB,230.5,180,180,1,2020-03-02
+225,Houston Texans,HOU,TDSP,230.5,226,235,2,2020-03-02
 226,Jalen Richard,OAK,RB,232.0,183,183,1,2020-03-02
 227,Teddy Bridgewater,NO,QB,234.0,187,187,1,2020-03-02
 228,Danny Amendola,DET,WR,235.0,232,238,2,2020-03-02

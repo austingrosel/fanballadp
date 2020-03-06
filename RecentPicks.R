@@ -13,7 +13,7 @@ csv_files <- fs::dir_ls(data_dir, regexp = "\\.csv$")
 
 df = csv_files %>% 
   map_dfr(read_csv) %>%
-  select(Player, ScrapeDate, ADP, `# Picks`, `Position(s)`, Rk) %>% 
+  select(Player, ScrapeDate, ADP, Team, `# Picks`, `Position(s)`, Rk) %>% 
   rename(Picks=`# Picks`, Position=`Position(s)`) %>%
   mutate(year = year(ScrapeDate) + yday(ScrapeDate) / 365)
 
@@ -40,7 +40,7 @@ first_draft = df %>%
 recent_draft = df %>% 
   filter(ScrapeDate >= max(ScrapeDate) - days(7), ScrapeDate <= max(ScrapeDate)) %>%
   mutate(adp.agg = ADP * Picks) %>%
-  group_by(Player, Position) %>%
+  group_by(Player, Position, Team) %>%
   summarise(adp.agg = sum(adp.agg),
             picks = sum(Picks)) %>%
   mutate(ADP = round(adp.agg/picks, 1)) %>%
@@ -57,19 +57,24 @@ draft_trend = recent_draft %>%
   filter(Rk <= 250) %>%
   group_by(Position) %>%
   mutate(rank = order(Rk, decreasing=F),
-         pos_rank = paste(Position, rank, sep = ''))
+         pos_rank = paste(Position, rank, sep = '')) %>%
+  left_join(., read_csv("rookies.csv"), by = "Player")
+
+draft_trend$Rookie[is.na(draft_trend$Rookie)] = 0
 
 recent_draft_players = recent_draft %>% pull(Player)
 slopes %>%
   arrange(desc(estimate)) %>%
   filter(Player %in% recent_draft_players) %>%
-  head(20) %>%
+  tail(20) %>%
   inner_join(df, by = "Player") %>%
   mutate(Player = reorder(Player, -estimate)) %>%
   ggplot(aes(year, Rk, color = Player)) +
   geom_point(aes(size = Picks), show.legend = FALSE) +
-  geom_smooth(show.legend = F) +
+  geom_smooth(show.legend = F, se = F) +
   facet_wrap(~ Player, scales = "free_y") +
   expand_limits(y = 0) +
   scale_y_reverse() +
   theme_bw()
+
+
