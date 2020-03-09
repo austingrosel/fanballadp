@@ -11,16 +11,10 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.webdriver.chrome.options import Options
 
 
-def daterange(start_date, end_date):
-    for n in range(int((end_date - start_date).days)):
-        yield start_date + datetime.timedelta(n)
-
-
 class Streams(luigi.Task):
     date_scrape = luigi.DateParameter()
 
     def run(self):
-        #date_start = (self.date_end - datetime.timedelta(days=1))
         date_scrape = self.date_scrape
 
         driver = webdriver.Remote("http://127.0.0.1:4444/wd/hub", desired_capabilities=DesiredCapabilities.CHROME)
@@ -43,8 +37,6 @@ class Streams(luigi.Task):
         time.sleep(5)
 
         tbl = driver.find_element_by_xpath("//*[@id=\"adp\"]").get_attribute('outerHTML')
-
-        driver.save_screenshot('screenshot.png')
 
         try:
             df = pd.read_html(tbl)[0]
