@@ -62,11 +62,11 @@ draft_trend = recent_draft %>%
 
 draft_trend$Rookie[is.na(draft_trend$Rookie)] = 0
 
-recent_draft_players = recent_draft %>% pull(Player)
+recent_draft_players = recent_draft %>% mutate(max_picks = max(picks)) %>% filter(picks > max_picks - 5) %>% pull(Player)
 slopes %>%
   arrange(desc(estimate)) %>%
   filter(Player %in% recent_draft_players) %>%
-  tail(20) %>%
+  head(20) %>%
   inner_join(df, by = "Player") %>%
   mutate(Player = reorder(Player, -estimate)) %>%
   ggplot(aes(year, Rk, color = Player)) +
@@ -76,5 +76,4 @@ slopes %>%
   expand_limits(y = 0) +
   scale_y_reverse() +
   theme_bw()
-
 
