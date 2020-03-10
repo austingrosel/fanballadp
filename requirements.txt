@@ -1,4 +1,7 @@
-docutils==0.16
+boto3==1.12.18
+botocore==1.15.18
+docutils==0.15.2
+jmespath==0.9.5
 lockfile==0.12.2
 luigi==2.8.12
 lxml==4.5.0
@@ -7,6 +10,7 @@ pandas==0.25.3
 python-daemon==2.2.4
 python-dateutil==2.8.1
 pytz==2019.3
+s3transfer==0.3.3
 selenium==3.141.0
 six==1.14.0
 tornado==5.1.1
