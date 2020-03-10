@@ -55,7 +55,6 @@ class Streams(luigi.Task):
 
     def output(self):
         client = S3Client()
-        #return luigi.LocalTarget('adp/ADP_{}.csv'.format(self.date_scrape))
         return S3Target('s3://luigiadp/adp/ADP_{}.csv'.format(self.date_scrape), client=client)
 
 
