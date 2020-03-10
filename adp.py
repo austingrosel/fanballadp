@@ -10,6 +10,8 @@ from selenium import webdriver
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.webdriver.chrome.options import Options
 
+from luigi.contrib.s3 import S3Target, S3Client
+
 
 class Streams(luigi.Task):
     date_scrape = luigi.DateParameter()
@@ -52,7 +54,9 @@ class Streams(luigi.Task):
             df.to_csv(fout, index=False)
 
     def output(self):
-        return luigi.LocalTarget('adp/ADP_{}.csv'.format(self.date_scrape))
+        client = S3Client()
+        #return luigi.LocalTarget('adp/ADP_{}.csv'.format(self.date_scrape))
+        return S3Target('s3://luigiadp/adp/ADP_{}.csv'.format(self.date_scrape), client=client)
 
 
 class RunAll(luigi.WrapperTask):
