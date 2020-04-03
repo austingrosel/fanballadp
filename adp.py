@@ -25,6 +25,8 @@ class Streams(luigi.Task):
 
         time.sleep(5)
 
+        driver.find_element_by_xpath("//*[@id=\"num_teams\"]/option[text()='12']").click()
+
         from_date_input = driver.find_element_by_xpath("//*[@id=\"from_date\"]")
         from_date_input.clear()
         from_date_input.send_keys(date_scrape.strftime("%m/%d/%Y"))
