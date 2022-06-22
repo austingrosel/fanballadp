@@ -5,7 +5,7 @@ jmespath==0.9.5
 lockfile==0.12.2
 luigi==2.8.12
 lxml==4.5.0
-numpy==1.18.1
+numpy==1.22.0
 pandas==0.25.3
 python-daemon==2.2.4
 python-dateutil==2.8.1
